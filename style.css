@@ -1,102 +1,65 @@
-/* Reset */
-* {
+/* ===== Global Artist Theme for Joquarter ===== */
+
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111; /* deep black-gray */
+  color: #f5f5f5; /* soft white for readability */
 }
 
-/* Body */
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background: red !important;
-  color: #f5f5f5;
-  text-align: center;
+/* Headings */
+h1, h2, h3, h4 {
+  color: #e600ff; /* neon pink */
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* Header */
-header {
-  background: #222;
-  padding: 20px;
-}
-header h1 {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-nav a {
-  color: #f5f5f5;
-  margin: 0 10px;
+/* Links */
+a {
+  color: #00d4ff; /* electric blue */
   text-decoration: none;
-}
-nav a:hover {
-  color: #ff4081;
+  transition: 0.3s;
 }
 
-/* Hero Section */
-#hero {
-  position: relative;
-  background: url('../images/background.jpg') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+a:hover {
+  color: #e600ff; /* neon pink hover */
 }
-#hero .overlay {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-content {
-  text-align: center;
+
+/* Buttons */
+button, .btn {
+  background: linear-gradient(135deg, #e600ff, #00d4ff);
   color: #fff;
-}
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-  margin-bottom: 20px;
-}
-#hero h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-.btn {
-  display: inline-block;
-  margin-top: 15px;
+  border: none;
   padding: 12px 24px;
-  background: #ff4081;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
+  border-radius: 30px;
   font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
-.btn:hover {
-  background: #ff1f70;
+
+button:hover, .btn:hover {
+  transform: scale(1.05);
 }
 
 /* Sections */
 section {
-  padding: 50px 20px;
-}
-section h2 {
-  margin-bottom: 15px;
-  font-size: 26px;
-  color: #ff4081;
-}
-ul {
-  list-style: none;
-}
-ul li {
-  margin: 10px 0;
+  padding: 60px 20px;
 }
 
-/* Footer */
-footer {
-  background: #222;
-  padding: 20px;
-  font-size: 14px;
+/* Hero / Banner */
+.hero {
+  background: linear-gradient(135deg, #111, #1a0033);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
