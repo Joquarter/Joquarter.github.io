@@ -10,3 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+console.log("✅ JavaScript is linked and running!");
+alert("Hello from Joquarter's site!");
