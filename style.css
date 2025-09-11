@@ -1,68 +1,65 @@
-/* Ensure page fills full height */
-html, body {
-  height: 100%;
+/* ===== Global Artist Theme for Joquarter ===== */
+
+body {
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #111; /* deep black-gray */
+  color: #f5f5f5; /* soft white for readability */
 }
 
-/* Hero section */
-.hero {
-  height: 100vh; /* full screen height */
-  display: flex;
-  align-items: center;     /* vertical centering */
-  justify-content: center; /* horizontal centering */
-  text-align: center;
-  background: linear-gradient(135deg, #111, #1a1a1a);
-  color: #fff;
+/* Headings */
+h1, h2, h3, h4 {
+  color: #e600ff; /* neon pink */
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* Container inside hero */
-.hero-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Links */
+a {
+  color: #00d4ff; /* electric blue */
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* Title + tagline */
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.hero-tagline {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: #e600ff;
+a:hover {
+  color: #e600ff; /* neon pink hover */
 }
 
 /* Buttons */
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
+button, .btn {
+  background: linear-gradient(135deg, #e600ff, #00d4ff);
+  color: #fff;
+  border: none;
   padding: 12px 24px;
   border-radius: 30px;
-  text-decoration: none;
-  background: #e600ff;
-  color: #fff;
   font-weight: bold;
-  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
-.btn:hover {
-  background: #00d4ff;
-  box-shadow: 0 0 12px #00d4ff;
+button:hover, .btn:hover {
+  transform: scale(1.05);
 }
 
-.btn-alt {
-  background: #00d4ff;
+/* Sections */
+section {
+  padding: 60px 20px;
 }
 
-.btn-alt:hover {
-  background: #e600ff;
-  box-shadow: 0 0 12px #e600ff;
+/* Hero / Banner */
+.hero {
+  background: linear-gradient(135deg, #111, #1a0033);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
