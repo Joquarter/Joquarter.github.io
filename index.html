@@ -4,70 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joquarter | International Artist</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Joquarter — International rising artist creating powerful global music. Listen now on Spotify, Apple Music, and SoundCloud.">
+  <meta name="keywords" content="Joquarter, International Artist, Global Music, Spotify, Apple Music, SoundCloud, Rising Star">
+  <meta name="author" content="Joquarter">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Joquarter | International Artist">
+  <meta property="og:description" content="International rising artist Joquarter. Listen now on Spotify, Apple Music, and SoundCloud.">
+  <meta property="og:image" content="https://yourdomain.com/assets/joquarter-banner.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joquarter | International Artist">
+  <meta name="twitter:description" content="International rising artist Joquarter. Listen now on Spotify, Apple Music, and SoundCloud.">
+  <meta name="twitter:image" content="https://yourdomain.com/assets/joquarter-banner.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Joquarter</h1>
-    <p>International Rising Artist | Breaking the World Stage</p>
-    <a href="#music" class="btn">🎧 Listen Now</a>
-    <a href="#contact" class="btn">📩 Book Me</a>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1 class="hero-title">Joquarter</h1>
+      <p class="hero-tagline">International Artist | Global Sound</p>
+      <div class="hero-buttons">
+        <a href="#music" class="btn btn-primary">Listen Now</a>
+        <a href="#contact" class="btn btn-secondary">Book Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        Joquarter is an international rising artist with a unique sound that blends
+        global rhythms, heartfelt lyrics, and powerful energy. His mission is to create
+        music that inspires, connects, and moves people worldwide.
+      </p>
+    </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am <strong>Joquarter</strong>, an international rising artist with a vision 
-      to unite the world through music. My sound blends cultures, stories, and 
-      emotions into global anthems that transcend borders.
-    </p>
+  <!-- Music Section -->
+  <section id="music" class="music">
+    <div class="container">
+      <h2>Music</h2>
+      <p>Stream Joquarter’s latest releases on your favorite platforms:</p>
+      <div class="stream-links">
+        <a href="https://open.spotify.com/track/YOUR_SPOTIFY_ID" target="_blank">Spotify</a>
+        <a href="https://music.apple.com/artist/YOUR_APPLE_ID" target="_blank">Apple Music</a>
+        <a href="https://soundcloud.com/YOUR_SOUNDCLOUD_ID" target="_blank">SoundCloud</a>
+      </div>
+      <div class="spotify-embed">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/YOUR_SPOTIFY_ID?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      </div>
+    </div>
   </section>
 
-  <!-- MUSIC -->
-  <section id="music">
-    <h2>My Music</h2>
-    <p>Stream my latest releases on your favorite platforms:</p>
-    <ul>
-      <li><a href="https://open.spotify.com/" target="_blank">Spotify</a></li>
-      <li><a href="https://music.apple.com/" target="_blank">Apple Music</a></li>
-      <li><a href="https://soundcloud.com/" target="_blank">SoundCloud</a></li>
-    </ul>
-
-    <!-- Spotify Embed -->
-    <iframe style="border-radius:12px; margin-top:20px;" 
-      src="https://open.spotify.com/embed/track/7GhIk7Il098yCjg4BQjzvb" 
-      width="100%" height="152" frameborder="0" 
-      allowfullscreen 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy">
-    </iframe>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>For bookings, collaborations, and inquiries, reach out below:</p>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>For bookings, collaborations, and inquiries:</p>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="email" name="email" placeholder="Your Email" required><br>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Joquarter. All Rights Reserved.</p>
-    <p>
-      <a href="https://instagram.com/" target="_blank">Instagram</a> |
-      <a href="https://twitter.com/" target="_blank">Twitter</a> |
-      <a href="https://youtube.com/" target="_blank">YouTube</a>
-    </p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Joquarter. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">Instagram</a>
+        <a href="https://twitter.com/YOUR_TWITTER" target="_blank">Twitter</a>
+        <a href="https://youtube.com/YOUR_YOUTUBE" target="_blank">YouTube</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- JavaScript -->
   <script src="main.js"></script>
 </body>
 </html>
