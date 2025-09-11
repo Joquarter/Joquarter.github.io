@@ -22,18 +22,3 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
     });
   });
 });
-
-// ===== Button Pulse Effect =====
-const buttons = document.querySelectorAll(".btn");
-setInterval(() => {
-  buttons.forEach(btn => {
-    btn.style.boxShadow = `
-      0 0 10px #e600ff,
-      0 0 20px #00d4ff,
-      0 0 30px #e600ff
-    `;
-    setTimeout(() => {
-      btn.style.boxShadow = "0 0 10px rgba(230,0,255,0.6)";
-    }, 1000);
-  });
-}, 2000);
