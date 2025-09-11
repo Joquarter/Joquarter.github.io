@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joquarter | International Artist</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Joquarter</h1>
-    <p>International Rising Artist | Breaking the World Stage</p>
-    <a href="#music" class="btn">🎧 Listen Now</a>
-    <a href="#contact" class="btn">📩 Book Me</a>
-  </section>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1 id="hero-title">Joquarter</h1>
+      <p class="tagline">Global Sound, Timeless Vibes</p>
+      <div class="hero-buttons">
+        <a href="#music" class="btn">Listen Now</a>
+        <a href="#contact" class="btn btn-outline">Book Me</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- ABOUT -->
+  <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am <strong>Joquarter</strong>, an international rising artist with a vision 
-      to unite the world through music. My sound blends cultures, stories, and 
-      emotions into global anthems that transcend borders.
-    </p>
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        Joquarter is an international rising artist blending afro-fusion,
+        hip-hop, and global sounds to create music that resonates across
+        borders.
+      </p>
+    </div>
   </section>
 
-  <!-- MUSIC -->
+  <!-- Music Section -->
   <section id="music">
-    <h2>My Music</h2>
-    <p>Stream my latest releases on your favorite platforms:</p>
-    <ul>
-      <li><a href="https://open.spotify.com/" target="_blank">Spotify</a></li>
-      <li><a href="https://music.apple.com/" target="_blank">Apple Music</a></li>
-      <li><a href="https://soundcloud.com/" target="_blank">SoundCloud</a></li>
-    </ul>
-
-    <!-- Spotify Embed -->
-    <iframe style="border-radius:12px; margin-top:20px;" 
-      src="https://open.spotify.com/embed/track/7GhIk7Il098yCjg4BQjzvb" 
-      width="100%" height="152" frameborder="0" 
-      allowfullscreen 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy">
-    </iframe>
+    <div class="container">
+      <h2>Music</h2>
+      <div class="music-embed">
+        <iframe style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/6rqhFgbbKwnb9MLmUQDhG6"
+          width="100%" height="152" frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </div>
+      <div class="music-links">
+        <a href="#">Spotify</a>
+        <a href="#">Apple Music</a>
+        <a href="#">SoundCloud</a>
+      </div>
+    </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>For bookings, collaborations, and inquiries:</p>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="email" name="email" placeholder="Your Email" required><br>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+    <div class="container">
+      <h2>Contact</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Joquarter. All Rights Reserved.</p>
-    <p>
-      <a href="https://instagram.com/" target="_blank">Instagram</a> |
-      <a href="https://twitter.com/" target="_blank">Twitter</a> |
-      <a href="https://youtube.com/" target="_blank">YouTube</a>
-    </p>
+    <div class="container">
+      <p>© 2025 Joquarter. All Rights Reserved.</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- JS -->
   <script src="main.js"></script>
 </body>
 </html>
