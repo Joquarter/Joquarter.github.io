@@ -14,13 +14,7 @@ body {
   text-align: center;
   padding: 120px 20px;
 }
-body {
-  background-image: url("https://raw.githubusercontent.com/Joquarter/Joquarter.github.io/refs/heads/main/file_0000000039e862439430b3e7f2d9e538.png");
-  background-size: cover;      /* stretch to cover the screen */
-  background-position: center; /* center the image */
-  background-repeat: no-repeat;/* prevent tiling */
-  min-height: 100vh;           /* full page height */
-  margin: 0;
+https://raw.githubusercontent.com/Joquarter/Joquarter.github.io/main/file_0000000039e862439430b3e7f2d9e538.png
 }
 .hero h1 {
   font-size: 2.5rem;
