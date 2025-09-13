@@ -163,6 +163,13 @@
           .scrollIntoView({ behavior: 'smooth' });
       });
     });
-  </script>
+  </script> // Animate background colors
+let colors = ["#111", "#222", "#333", "#444"];
+let index = 0;
+
+setInterval(() => {
+  document.body.style.background = colors[index];
+  index = (index + 1) % colors.length;
+}, 5000); // every 5 seconds
 </body>
 </html>
