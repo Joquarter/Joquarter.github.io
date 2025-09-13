@@ -1,132 +1,49 @@
-/* ===== Joquarter Global Artist Theme ===== */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #111;
-  color: #f5f5f5;
-  scroll-behavior: smooth;
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, #111, #1a0033);
-  text-align: center;
-  padding: 120px 20px;
-}
-
-}
-.hero h1 {
-  font-size: 2.5rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  animation: fadeInDown 2s ease;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  color: #ccc;
-  margin: 20px 0;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #e600ff, #00d4ff);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(230,0,255,0.6);
-}
-
-.btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(0,212,255,0.9);
-}
-
-/* Sections */
-section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 2.5rem;
-  color: #e600ff;
-  margin-bottom: 20px;
-}
-
-/* About */
-#about p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 1.1rem;
+  font-family: 'Arial', sans-serif;
   line-height: 1.6;
 }
 
-/* Music */
-#music ul {
-  list-style: none;
-  padding: 0;
-}
-
-#music ul li {
-  display: inline-block;
-  margin: 10px 15px;
-}
-
-#music ul li a {
-  color: #00d4ff;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-#music ul li a:hover {
-  color: #e600ff;
-}
-
-/* Contact */
-form input, form textarea {
-  width: 80%;
-  max-width: 500px;
-  padding: 12px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 8px;
-  background: #222;
-  color: #fff;
-}
-
-form button {
-  margin-top: 10px;
-}
-
-/* Footer */
-footer {
-  background: #000;
+header {
+  background: black;
+  color: white;
+  padding: 1rem;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #777;
 }
 
-footer a {
-  color: #00d4ff;
-  margin: 0 10px;
+header nav a {
+  color: white;
+  margin: 0 15px;
   text-decoration: none;
 }
 
-footer a:hover {
-  color: #e600ff;
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-50px); }
-  to { opacity: 1; transform: translateY(0); }
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
