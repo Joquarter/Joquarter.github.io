@@ -3,252 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chieffer Chief</title>
+  <title>Chieffer Chief | Official Website</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
+    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: #0a0a0a;
       color: #fff;
-      overflow-x: hidden;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    /* HEADER */
+    /* Header */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 3rem;
-      background: transparent;
-      opacity: 0;
-      animation: fadeInHeader 1.5s ease forwards;
+      padding: 15px 50px;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
+      animation: fadeInDown 1.2s ease forwards;
     }
 
-    .logo {
+    header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
-                   0 0 20px rgba(255, 215, 0, 0.5);
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .logo:hover {
-      color: #ffefb3;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 1),
-                   0 0 30px rgba(255, 215, 0, 0.8);
+      font-size: 1.6rem;
+      color: #ffd700;
+      text-shadow: 0 0 15px rgba(255,215,0,0.6);
+      animation: glow 2s infinite alternate;
     }
 
     nav ul {
-      display: flex;
-      gap: 2.5rem;
       list-style: none;
+      display: flex;
+      gap: 30px;
     }
 
-    nav a {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #fff;
+    nav ul li a {
       text-decoration: none;
+      font-weight: 600;
+      color: #fff;
       position: relative;
-      transition: all 0.4s ease;
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.4),
-                   0 0 15px rgba(255, 215, 0, 0.2);
+      transition: color 0.3s;
     }
 
-    /* Golden shimmer underline */
-    nav a::after {
-      content: '';
+    nav ul li a:hover {
+      color: #ffd700;
+      text-shadow: 0 0 8px rgba(255,215,0,0.8);
+    }
+
+    nav ul li a::after {
+      content: "";
       position: absolute;
       left: 0;
-      bottom: -6px;
-      width: 100%;
+      bottom: -5px;
+      width: 0%;
       height: 2px;
-      background: linear-gradient(90deg, gold, #fff, gold);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.5s ease;
+      background: #ffd700;
+      transition: width 0.3s;
     }
 
-    nav a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
+    nav ul li a:hover::after { width: 100%; }
 
-    /* Hover glow */
-    nav a:hover {
-      color: #ffefb3;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
-                   0 0 20px rgba(255, 215, 0, 0.6);
-    }
-
-    /* HERO */
+    /* Hero */
     .hero {
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background: url("https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2") center/cover no-repeat;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 0 1rem;
-      position: relative;
+      padding: 0 20px;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.65);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
-
-    .artist-name {
+    .hero h2 {
       font-family: 'Playfair Display', serif;
       font-size: 3rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      color: #fff;
-      animation: fadeInUp 2s ease forwards, glow 3s ease-in-out infinite alternate;
-      text-shadow: 0 0 15px rgba(255,215,0,0.8),
-                   0 0 30px rgba(255,215,0,0.5);
+      margin-bottom: 15px;
+      color: #ffd700;
+      text-shadow: 0 0 25px rgba(255,215,0,0.8);
+      animation: fadeIn 2s ease forwards, glow 2s infinite alternate;
     }
 
-    .tagline {
-      margin-top: 1rem;
+    .hero p {
       font-size: 1.2rem;
+      max-width: 600px;
       color: #ddd;
-      letter-spacing: 2px;
-      animation: fadeInUp 2s ease forwards;
-      animation-delay: 0.8s;
-      opacity: 0;
+      animation: fadeInUp 2.5s ease forwards;
     }
 
-    /* ANIMATIONS */
-    @keyframes fadeInHeader {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 15px rgba(255,215,0,0.7), 0 0 30px rgba(255,215,0,0.4); }
-      to   { text-shadow: 0 0 25px rgba(255,215,0,1), 0 0 50px rgba(255,215,0,0.8); }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      header { flex-direction: column; gap: 0.5rem; padding: 1rem; }
-      nav ul { gap: 1.2rem; }
-      nav a { font-size: 0.85rem; letter-spacing: 1.2px; }
-      .artist-name { font-size: 2rem; }
-      .tagline { font-size: 1rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header>
-    <div class="logo">CHIEFFER CHIEF</div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="artist-name">CHIEFFER CHIEF</h1>
-      <p class="tagline">The Future of Sound</p>
-    </div>
-  </section>
-
-</body>
-</html>
-    }
-
-    /* SECTIONS */
+    /* Sections */
     section {
-      min-height: 100vh;
-      padding: 6rem 2rem 4rem;
-      display: flex; justify-content: center; align-items: center;
-      flex-direction: column; text-align: center;
+      padding: 100px 50px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
     }
+
     section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem; margin-bottom: 1.5rem;
-      color: gold; letter-spacing: 3px;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffd700;
     }
-    section p { max-width: 700px; line-height: 1.6; color: #ddd; }
 
-    /* GALLERY */
-    .gallery-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem; margin-top: 2rem; width: 100%; max-width: 1000px;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    .gallery-grid img {
-      width: 100%; height: 250px; object-fit: cover;
-      border-radius: 10px; transition: transform 0.4s ease;
-    }
-    .gallery-grid img:hover { transform: scale(1.05); }
 
-    /* CONTACT */
-    .contact-links a {
-      display: inline-block; margin: 0.5rem 1rem;
-      color: gold; font-weight: 600;
-      text-decoration: none; border: 1px solid gold;
-      padding: 0.6rem 1.2rem; border-radius: 30px;
-      transition: all 0.3s ease;
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.4s;
     }
-    .contact-links a:hover {
-      background: gold; color: #000;
-      box-shadow: 0 0 15px gold;
+
+    .gallery img:hover { transform: scale(1.05); }
+
+    .contact a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .contact a:hover {
+      text-shadow: 0 0 8px rgba(255,215,0,0.8);
     }
 
     footer {
-      padding: 1rem; text-align: center;
-      font-size: 0.9rem; background: #111;
-      color: #888;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      background: #000;
+    }
+
+    /* Animations */
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(255,215,0,0.6); }
+      to { text-shadow: 0 0 20px rgba(255,215,0,1), 0 0 30px rgba(255,215,0,0.8); }
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      header { padding: 15px 20px; flex-direction: column; }
+      nav ul { flex-direction: column; gap: 15px; margin-top: 10px; }
+      .hero h2 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header>
-    <div class="logo">CHIEFFER CHIEF</div>
+    <h1>Chieffer Chief</h1>
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
@@ -259,52 +188,46 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <h1 class="artist-name">CHIEFFER CHIEF</h1>
-      <p class="tagline">The Future of Sound</p>
-    </div>
+    <h2>Chieffer Chief</h2>
+    <p>The Voice of Ambition • Afrobeats & Hip-Hop • World Stage</p>
   </section>
 
-  <!-- ABOUT -->
+  <!-- About -->
   <section id="about">
-    <h2>About</h2>
-    <p>Chieffer Chief is a world-class emerging artist redefining sound and pushing boundaries with every performance. His music blends passion, culture, and ambition into timeless experiences for audiences worldwide.</p>
+    <h2>About Me</h2>
+    <p>I am Chieffer Chief, an emerging artist fusing Afrobeats, Hip-Hop, and global sounds into a unique voice of ambition and power. My music speaks for the streets, the dreamers, and the world.</p>
   </section>
 
-  <!-- MUSIC -->
+  <!-- Music -->
   <section id="music">
     <h2>Music</h2>
-    <p>Listen to the latest releases:</p>
-    <!-- Spotify embed (replace with your own track/album link) -->
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC?utm_source=generator" width="80%" height="380" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7ouMYWpwJ422jRcDASZB7P" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
   </section>
 
-  <!-- GALLERY -->
+  <!-- Gallery -->
   <section id="gallery">
     <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80" alt="Studio">
-      <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=80" alt="Performance">
-      <img src="https://images.unsplash.com/photo-1525286116112-b59af11adad1?auto=format&fit=crop&w=800&q=80" alt="Crowd">
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Studio">
+      <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2" alt="Live Performance">
+      <img src="https://images.unsplash.com/photo-1521336575822-6da63fb45455" alt="Portrait">
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
+  <!-- Contact -->
+  <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>For bookings, collaborations, or press inquiries:</p>
-    <div class="contact-links">
-      <a href="mailto:chiefferchief@email.com">Email</a>
-      <a href="https://instagram.com/" target="_blank">Instagram</a>
-      <a href="https://twitter.com/" target="_blank">Twitter</a>
-    </div>
+    <p>Email: <a href="mailto:chiefferchief@example.com">chiefferchief@example.com</a></p>
+    <p>
+      <a href="#">Instagram</a> | <a href="#">Twitter</a> | <a href="#">YouTube</a>
+    </p>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    © 2025 Chieffer Chief. All Rights Reserved.
+    <p>© 2025 Chieffer Chief. All rights reserved.</p>
   </footer>
 
 </body>
