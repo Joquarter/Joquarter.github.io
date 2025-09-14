@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joquarter</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chieffer Chief</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* your body, header, nav styles still here */
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    /* HERO STYLING */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ff4d6d;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff4d6d;
+    }
+
+    /* HERO */
     .hero {
-      background: url('https://picsum.photos/1600/900?blur=3') no-repeat center center/cover;
+      background: url('https://picsum.photos/1600/900?blur=2') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -21,211 +73,187 @@
       text-align: center;
       position: relative;
     }
+
     .hero::after {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.65);
     }
-    .overlay { position: relative; z-index: 1; }
-    .artist-name {
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
       font-family: 'Playfair Display', serif;
       font-size: 4rem;
       font-weight: 700;
       letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #ff4d6d;
-      text-shadow: 0 4px 25px rgba(0,0,0,0.8);
-      margin: 0;
-    }
-    .tagline {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-top: 15px;
-      color: #fff;
-      background: rgba(255, 77, 109, 0.2);
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      border-radius: 12px;
-    }
-  </style>
-</head>
-  <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #111;
-  color: #fff;
-  line-height: 1.6;
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif; /* Luxury for your name */
-  font-size: 3rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #ff4d6d;
-}
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.7);
-}
-
-.hero p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  background: rgba(0,0,0,0.6);
-  padding: 0.7rem 1.2rem;
-  border-radius: 10px;
-  display: inline-block;
-  color: #ffdee9;
-}
-    /* HERO */
-    .hero {
-      background: url('https://picsum.photos/1200/600?random') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.8);
+      animation: fadeInDown 1.5s ease;
     }
+
     .hero p {
-      font-size: 1.2rem;
-      background: rgba(0,0,0,0.5);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #f8f8f8;
+      background: rgba(255, 77, 109, 0.15);
       display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.7rem 1.4rem;
+      border-radius: 30px;
+      animation: fadeInUp 2s ease;
     }
 
     /* SECTIONS */
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 6rem 10%;
     }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
       text-align: center;
       color: #ff4d6d;
     }
-    section p { text-align: center; }
+
+    section p {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* MUSIC */
+    .music iframe {
+      display: block;
+      margin: 2rem auto;
+      border-radius: 12px;
+    }
 
     /* GALLERY */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
     }
+
     .gallery-grid img {
       width: 100%;
-      border-radius: 10px;
-      transition: transform 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+      transition: transform 0.4s;
     }
-    .gallery-grid img:hover { transform: scale(1.05); }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* CONTACT */
+    .contact p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .contact a {
+      color: #ff4d6d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
 
     /* FOOTER */
     footer {
-      background: #222;
-      color: #bbb;
       text-align: center;
-      padding: 15px;
-      margin-top: 30px;
+      padding: 2rem;
+      background: #000;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- NAV -->
   <header>
-    <h1>Joquarter</h1>
+    <h1>Chieffer Chief</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#music">Music</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- HERO -->
-  <!-- HERO SECTION -->
-<section class="hero">
-  <div class="overlay">
-    <h1 class="artist-name">JOQUARTER</h1> <!-- change to your real artist name -->
-    <p class="tagline">Global • Timeless • Unstoppable</p>
-  </div>
-</section>
-    <h2><h2>The Sound You’ve Been Waiting For</h2>
- <p>Rapper • Singer • Songwriter • Producer • Performer</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Chieffer Chief</h2>
+      <p>Global • Timeless • Unstoppable</p>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
-    <h2>About Me</h2>
-    <p>Oddiah Opeyemi Jude (born August 2), popularly known as Joquarter is a Nigerian Rapper, Singer-Songwriter, Record Producer, Audio Engineer and Entrepreneur. Born and raised in Kwara State (From Edo State) Joquarter has always been a lover of music which strayed him to make a career out of it, He started music at a very tender age which was what made his popularity spread like wild fire that can’t be quenched. He was part of a music group in his secondary school days, it was at that stage in his life he discerned his exceptional gift of rapping and singing without inking on paper. Yes, he doesn’t pen on paper or thumb on any gadgets while writing his music, he stores everything upstairs. It was for this reason he decided to carve his own niche in the music scene and as well, discovering his full potential as a performer and a recording artist.
-
-He studied Geography and Environmental Management in University of Ilorin.
-
-“Joquarter” became an household name with his constant release of songs and I could say, music flows in the family for his mom was once a dancer who represented Nigeria in Berlin and other prominent places while his dad happens to be a music fanatic.
-
-He’s currently flying his own independent imprint HUMBLE CHIEFS..</p>
+    <h3>About</h3>
+    <p>Chieffer Chief is a visionary artist redefining sound with passion, emotion, and timeless artistry. With a voice that captivates and lyrics that inspire, the journey transcends boundaries and connects hearts worldwide.</p>
   </section>
 
   <!-- MUSIC -->
-  <section id="music">
-    <h2>My Music</h2>
-    <p>Stream my latest songs:</p><iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0VKdde27DvOfHSGsn9u7PY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <!-- Example Spotify Embed -->
-    
+  <section id="music" class="music">
+    <h3>Music</h3>
+    <p>Listen to the latest releases on Spotify:</p>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/11dFghVXANMlKmJXsNCbNl?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </section>
 
   <!-- GALLERY -->
   <section id="gallery">
-    <h2>Gallery</h2>
+    <h3>Gallery</h3>
     <div class="gallery-grid">
-      <img src="https://picsum.photos/400/400?random=1" alt="Performance 1">
-      <img src="https://picsum.photos/400/400?random=2" alt="Performance 2">
-      <img src="https://picsum.photos/400/400?random=3" alt="Performance 3">
-      <img src="https://picsum.photos/400/400?random=4" alt="Performance 4">
+      <img src="https://picsum.photos/id/1011/500/500" alt="Gallery Image 1">
+      <img src="https://picsum.photos/id/1015/500/500" alt="Gallery Image 2">
+      <img src="https://picsum.photos/id/1016/500/500" alt="Gallery Image 3">
+      <img src="https://picsum.photos/id/1027/500/500" alt="Gallery Image 4">
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="Joquartermusic@gmail.com"></a></p>
-    <p>Follow me on <a href="#instagram.com/joquarter">instagram</a> | <a href="#">https://www.youtube.com/channel/UCII5R8dbvUhK7-B7YdnkqAw/about</a> | <a href="#">twitter</a></p>
+  <section id="contact" class="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:chiefferchief@gmail.com">chiefferchief@gmail.com</a></p>
+    <p>Instagram: <a href="#">@chiefferchief</a></p>
+    <p>Twitter: <a href="#">@chiefferchief</a></p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Joquarter. All rights reserved.</p>
+    &copy; 2025 Chieffer Chief. All rights reserved.
   </footer>
 
-  <script>
-    // Smooth scrolling effect
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
