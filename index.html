@@ -24,28 +24,56 @@
       overflow-x: hidden;
     }
 
-   /* NAVIGATION BAR */
+   /* HEADER */
 header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent; /* keeps it clean */
-  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: transparent;
+  opacity: 0;
+  animation: fadeInHeader 1.5s ease forwards;
 }
 
-nav {
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
+               0 0 20px rgba(255, 215, 0, 0.5);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.logo:hover {
+  color: #ffefb3;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 1),
+               0 0 30px rgba(255, 215, 0, 0.8);
+}
+
+/* NAVIGATION */
+nav ul {
   display: flex;
-  justify-content: center;
   gap: 2.5rem;
-  opacity: 0; /* start hidden */
-  animation: fadeInNav 2s ease forwards;
-  animation-delay: 0.5s;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
 }
 
 nav a {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;       /* clean + fits all links */
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -57,7 +85,7 @@ nav a {
                0 0 15px rgba(255, 215, 0, 0.2);
 }
 
-/* Underline shimmer */
+/* Golden shimmer underline */
 nav a::after {
   content: '';
   position: absolute;
@@ -84,10 +112,10 @@ nav a:hover {
 }
 
 /* Fade-in animation */
-@keyframes fadeInNav {
+@keyframes fadeInHeader {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
@@ -95,14 +123,21 @@ nav a:hover {
   }
 }
 
-/* RESPONSIVE FIX: Smaller font for phones */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  nav {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  nav ul {
     gap: 1.2rem;
   }
   nav a {
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    letter-spacing: 1.2px;
+  }
+}
   }
 }
     }
@@ -279,18 +314,17 @@ nav a:hover {
 </head>
 <body>
 
-  <!-- NAV -->
   <header>
-    <h1>Joquarter</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="logo">Joquarter</div> <!-- CHANGE THIS TO YOUR NAME/LOGO -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- HERO -->
   <section class="hero">
