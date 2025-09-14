@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
+    /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       font-family: 'Montserrat', sans-serif;
       background: #0a0a0a;
@@ -20,60 +20,183 @@
 
     /* HEADER */
     header {
-      position: fixed; top: 0; left: 0;
-      width: 100%; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 1rem 3rem;
       background: transparent;
+      opacity: 0;
+      animation: fadeInHeader 1.5s ease forwards;
     }
 
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.5rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 2px;
+      font-size: 1.5rem;
+      font-weight: 700;
       color: #fff;
-      text-shadow: 0 0 10px gold, 0 0 20px rgba(255,215,0,0.5);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
+                   0 0 20px rgba(255, 215, 0, 0.5);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
-    nav ul { display: flex; gap: 2.5rem; list-style: none; }
-    nav a {
-      color: #fff; text-decoration: none; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase;
-      position: relative; transition: all 0.4s ease;
+    .logo:hover {
+      color: #ffefb3;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 1),
+                   0 0 30px rgba(255, 215, 0, 0.8);
     }
+
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.4s ease;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.4),
+                   0 0 15px rgba(255, 215, 0, 0.2);
+    }
+
+    /* Golden shimmer underline */
     nav a::after {
-      content: ''; position: absolute; left: 0; bottom: -6px;
-      width: 100%; height: 2px;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
       background: linear-gradient(90deg, gold, #fff, gold);
-      transform: scaleX(0); transform-origin: right;
+      transform: scaleX(0);
+      transform-origin: right;
       transition: transform 0.5s ease;
     }
-    nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    nav a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Hover glow */
+    nav a:hover {
+      color: #ffefb3;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
+                   0 0 20px rgba(255, 215, 0, 0.6);
+    }
 
     /* HERO */
     .hero {
       height: 100vh;
-      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      display: flex; justify-content: center; align-items: center;
-      text-align: center; position: relative;
+      background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
     }
+
     .hero::before {
-      content: ''; position: absolute; inset: 0;
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.65);
     }
-    .hero-content { position: relative; z-index: 1; }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
     .artist-name {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem; letter-spacing: 4px;
-      text-transform: uppercase; color: #fff;
-      text-shadow: 0 0 20px gold, 0 0 40px rgba(255,215,0,0.6);
-      animation: glow 3s ease-in-out infinite alternate;
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #fff;
+      animation: fadeInUp 2s ease forwards, glow 3s ease-in-out infinite alternate;
+      text-shadow: 0 0 15px rgba(255,215,0,0.8),
+                   0 0 30px rgba(255,215,0,0.5);
     }
-    .tagline { margin-top: 1rem; font-size: 1.2rem; color: #ddd; }
+
+    .tagline {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #ddd;
+      letter-spacing: 2px;
+      animation: fadeInUp 2s ease forwards;
+      animation-delay: 0.8s;
+      opacity: 0;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInHeader {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     @keyframes glow {
-      from { text-shadow: 0 0 15px gold, 0 0 30px rgba(255,215,0,0.6); }
-      to { text-shadow: 0 0 25px gold, 0 0 60px rgba(255,215,0,1); }
+      from { text-shadow: 0 0 15px rgba(255,215,0,0.7), 0 0 30px rgba(255,215,0,0.4); }
+      to   { text-shadow: 0 0 25px rgba(255,215,0,1), 0 0 50px rgba(255,215,0,0.8); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header { flex-direction: column; gap: 0.5rem; padding: 1rem; }
+      nav ul { gap: 1.2rem; }
+      nav a { font-size: 0.85rem; letter-spacing: 1.2px; }
+      .artist-name { font-size: 2rem; }
+      .tagline { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">CHIEFFER CHIEF</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="artist-name">CHIEFFER CHIEF</h1>
+      <p class="tagline">The Future of Sound</p>
+    </div>
+  </section>
+
+</body>
+</html>
     }
 
     /* SECTIONS */
